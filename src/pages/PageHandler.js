@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Home from './Home';
 import TypePage from './TypePage';
-import NavBar from '../components/Navbar'
+import NavBar from '../components/Navbar';
 
 class PageHandler extends Component {
     state = {
