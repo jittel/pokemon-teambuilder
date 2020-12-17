@@ -49,6 +49,9 @@ export default function TypeDropdown() {
         const pokeType = element.target;
         console.log(pokeType.text);
 
+        var button = document.getElementById('dropdownMenuButton');
+        button.innerHTML = '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick={getTypes}>' + pokeType.text + '</button>'
+
         //enter data from dropdowns into typeObject
         //store typeObject as a json file
         // const typesJSON = JSON.stringify(typesObject)
