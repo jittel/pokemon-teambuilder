@@ -18,21 +18,3 @@ function App() {
 }
 
 export default App;
-
-
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Footer from './components/Footer'
-// import PageHandler from './pages/PageHandler';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <PageHandler />
-//       <Footer />
-//     </div>
-//   );
-// }
-
-// export default App;

@@ -8,7 +8,7 @@ export default function Footer() {
                     <p class="navbar-brand copyright">Copyright @ Nate Ginn 2020</p>
                 </div>
                 <div clas="row">
-                    <a class="navbar-brand" href="https://github.com/jittel" target="_blank">Github</a>
+                    <a class="navbar-brand" href="https://github.com/jittel" target="_blank" rel="noreferrer">Github</a>
                 </div>
             </nav>
         </div>
