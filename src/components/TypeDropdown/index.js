@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 // const fs = require('fs');
 
-// const mycomponent = React.FunctionComponent
-
-
 export default function TypeDropdown() {
-    const typesObject = {
-        name: "",
-        typeOne: "",
-        typeTwo: ""
-    }
+    // const typesObject = {
+    //     name: "",
+    //     typeOne: "",
+    //     typeTwo: ""
+    // }
 
-    // maybe some usestate to replace this for show
-
+    // usestate to replace this for storeType
+    // const [type, setType] = useState('');
 
     const getTypes = () => {
         //Json array of types
@@ -38,69 +35,32 @@ export default function TypeDropdown() {
         ];
 
         var element = document.getElementById('sel');
-        // if (element = "") {
         for (var i = 0; i < types.length; i++) {
-            //populate element with json
+            //populate dropdown with types
             element.innerHTML = element.innerHTML +
-                '<option value = "' + types[i]['id'] + '">' + types[i]['type'] + '</option>'
+                '<a class="dropdown-item" href="#" value = "' + types[i]['id'] + '">' + types[i]['type'] + '</a>'
+
         }
-        // }
+
     }
 
-    function show(element) {
-        // GET THE SELECTED VALUE FROM <select> ELEMENT AND SHOW IT.
-        const msg = document.getElementById('msg');
-        msg.innerHTML = 'Selected Type: <b>' + element.options[element.selectedIndex].text + '</b> </br>' +
-            'id: <b>' + element.value + '</b>';
-    }
+    function storeType(element) {
+        //returns a tag in list
+        const pokeType = element.target;
+        console.log(pokeType.text);
 
-    // getTypes();
+        //enter data from dropdowns into typeObject
+        //store typeObject as a json file
+        // const typesJSON = JSON.stringify(typesObject)
+        // fs.writeFileSync('data.json', typesJSON)
+    }
 
     return (
-        <div>
-            <p>
-                <input type="button"
-                    onClick={getTypes}
-                    value="Click to Populate SELECT with JSON" />
-            </p>
-            <select id="sel" onChange={show}>
-                <option value="">-- Select --</option>
-            </select>
-
-            <p id="msg"></p>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick={getTypes}>
+                Select Type
+      </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" onClick={storeType} id="sel"></div>
         </div>
     )
-
-    //enter data from dropdowns into typeObject
-    //store typeObject as a json file
-    // const typesJSON = JSON.stringify(typesObject)
-    // fs.writeFileSync('data.json', typesJSON)
-
-    //     return (
-    //         <div class="dropdown">
-    //             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    //                 Dropdown
-    //   </button>
-    //             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    //                 <a class="dropdown-item" href="#">Normal</a>
-    //                 <a class="dropdown-item" href="#">Fighting</a>
-    //                 <a class="dropdown-item" href="#">Flying</a>
-    //                 <a class="dropdown-item" href="#">Poison</a>
-    //                 <a class="dropdown-item" href="#">Ground</a>
-    //                 <a class="dropdown-item" href="#">Rock</a>
-    //                 <a class="dropdown-item" href="#">Bug</a>
-    //                 <a class="dropdown-item" href="#">Ghost</a>
-    //                 <a class="dropdown-item" href="#">Steel</a>
-    //                 <a class="dropdown-item" href="#">Fire</a>
-    //                 <a class="dropdown-item" href="#">Water</a>
-    //                 <a class="dropdown-item" href="#">Grass</a>
-    //                 <a class="dropdown-item" href="#">Electric</a>
-    //                 <a class="dropdown-item" href="#">Psychic</a>
-    //                 <a class="dropdown-item" href="#">Ice</a>
-    //                 <a class="dropdown-item" href="#">Dragon</a>
-    //                 <a class="dropdown-item" href="#">Dark</a>
-    //                 <a class="dropdown-item" href="#">Fairy</a>
-    //             </div>
-    //         </div>
-    //     )
 }

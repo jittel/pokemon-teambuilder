@@ -1,5 +1,6 @@
 import React from 'react';
-import Dropdown from '../components/TypeDropdown';
+// import Dropdown from '../components/TypeDropdown';
+import TypeRow from '../components/TypeRow'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer'
 
@@ -8,30 +9,12 @@ export default function TypePage() {
     return (
         <div>
             <Navbar />
-            <div class='row'>
-                <Dropdown />
-                <Dropdown />
-            </div>
-            <div class='row'>
-                <Dropdown />
-                <Dropdown />
-            </div>
-            <div class='row'>
-                <Dropdown />
-                <Dropdown />
-            </div>
-            <div class='row'>
-                <Dropdown />
-                <Dropdown />
-            </div>
-            <div class='row'>
-                <Dropdown />
-                <Dropdown />
-            </div>
-            <div class='row'>
-                <Dropdown />
-                <Dropdown />
-            </div>
+                <TypeRow />
+                <TypeRow />
+                <TypeRow />
+                <TypeRow />
+                <TypeRow />
+                <TypeRow />
             <Footer />
         </div>
     )
